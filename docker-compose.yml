@@ -1,0 +1,22 @@
+services:
+  user-service:
+    build: ./backend/UserService
+    ports:
+      - "5000:8080"
+    volumes:
+      - ./backend/UserService:/src
+    command: dotnet watch run # Enable watch for backend changes
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"  # Map the Vite dev server port to your local machine
+    volumes:
+      - ./frontend:/app
+    command: npm run dev -- --host 0.0.0.0  # Allow external access to the dev server
+    environment:
+      - NODE_ENV=development
