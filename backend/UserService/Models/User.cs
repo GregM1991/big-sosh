@@ -10,9 +10,11 @@ namespace UserServiceNamespace.Models
     public string Id { get; set; }
 
     [BsonElement("name")]
+    [BsonRequired]
     public string Name { get; set; }
 
     [BsonElement("email")]
+    [BsonRequired]
     public string Email { get; set; }
 
     public User()

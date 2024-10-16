@@ -5,7 +5,7 @@ using UserServiceNamespace.Models;
 namespace UserServiceNamespace.Controllers
 {
   [ApiController]
-  [Route("api/[controller]")]
+  [Route("api/[controller]/[action]")]
   public class UserController : ControllerBase
   {
     private readonly UserService _userService;

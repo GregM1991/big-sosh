@@ -6,19 +6,19 @@ namespace UserServiceNamespace.Services
 {
   public class UserService
   {
-    private readonly IMongoCollection<User> _usersCollection;
+    private readonly IMongoCollection<User> _users;
 
     public UserService(IOptions<MongoDbSettings> mongoDbSettings)
     {
-      var mongoClient = new MongoClient(mongoDbSettings.Value.ConnectionString);
-      var mongoDatabase = mongoClient.GetDatabase(mongoDbSettings.Value.DatabaseName);
-      _usersCollection = mongoDatabase.GetCollection<User>(mongoDbSettings.Value.UserCollectionName);
+        var client = new MongoClient(mongoDbSettings.Value.ConnectionString);
+        var database = client.GetDatabase(mongoDbSettings.Value.DatabaseName);
+        _users = database.GetCollection<User>(mongoDbSettings.Value.UserCollectionName);
     }
 
     public async Task<List<User>> GetAllUsersAsync() =>
-        await _usersCollection.Find(_ => true).ToListAsync();
+        await _users.Find(_ => true).ToListAsync();
 
     public async Task CreateUserAsync(User newUser) =>
-        await _usersCollection.InsertOneAsync(newUser);
+        await _users.InsertOneAsync(newUser);
   }
 }

@@ -1,33 +1,60 @@
+const BASE_URL = "http://localhost:5000/api";
+
 interface FetchOptions extends RequestInit {
   headers?: Record<string, string>;
 }
 
-const BASE_URL = 'http://localhost:5000';
+interface ServiceApiClientOptions {
+  basePath: string;
+}
 
-const apiClient = async <T>(url: string, options: FetchOptions = {}): Promise<T> => {
-  const fullUrl = `${BASE_URL}${url}`;
-  const defaultHeaders = {
-    'Content-Type': 'application/json',
-    ...options.headers,
+type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+
+function createServiceApiClient({ basePath }: ServiceApiClientOptions) {
+  const fullBasePath = `${BASE_URL}${basePath}`;
+
+  const serviceApiClient = async <TResponse, TBody = undefined>(
+    path: string,
+    method: HttpMethod,
+    body?: TBody,
+    options: Omit<FetchOptions, "method" | "body"> = {}
+  ): Promise<TResponse> => {
+    const fullUrl = `${fullBasePath}${path}`;
+    const defaultHeaders = {
+      "Content-Type": "application/json",
+      ...options.headers
+    };
+
+    try {
+      const response = await fetch(fullUrl, {
+        ...options,
+        method,
+        headers: defaultHeaders,
+        body: body ? JSON.stringify(body) : undefined
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Something went wrong");
+      }
+
+      return response.json() as Promise<TResponse>;
+    } catch (error) {
+      console.error("Fetch error:", error);
+      throw error;
+    }
   };
 
-  try {
-    const response = await fetch(fullUrl, {
-      ...options,
-      headers: defaultHeaders,
-    });
+  return {
+    get: <TResponse>(path: string, options?: Omit<FetchOptions, "method">) =>
+      serviceApiClient<TResponse, undefined>(path, "GET", undefined, options),
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Something went wrong');
-    }
+    post: <TResponse, TBody>(
+      path: string,
+      body: TBody,
+      options?: Omit<FetchOptions, "method" | "body">
+    ) => serviceApiClient<TResponse, TBody>(path, "POST", body, options)
+  };
+}
 
-    return response.json() as Promise<T>;
-  } catch (error) {
-    // Customize error handling
-    console.error('Fetch error:', error);
-    throw error;
-  }
-};
-
-export default apiClient;
+export default createServiceApiClient;

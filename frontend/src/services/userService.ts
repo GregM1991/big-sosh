@@ -1,15 +1,17 @@
-import apiClient from '../api/apiClient';
-import { User } from '../domain/entities/User';
+import createServiceApiClient from "../api/apiClient";
+import { User } from "../domain/entities/User";
+
+const userApiClient = createServiceApiClient({ basePath: "/User" });
 
 export const getUsers = async () => {
-  const users = await apiClient<Array<User>>('/user');
-  return users;
+  return userApiClient.get<User[]>("/getAll");
 };
 
+interface CreateUserRequest {
+  name: string;
+  email: string;
+}
+
 export const createUser = async (user: { name: string; email: string }) => {
-  return apiClient('/user', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(user),
-  });
+  return userApiClient.post<User, CreateUserRequest>("create", user);
 };

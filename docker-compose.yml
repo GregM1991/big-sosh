@@ -5,18 +5,32 @@ services:
       - "5000:8080"
     volumes:
       - ./backend/UserService:/src
-    command: dotnet watch run # Enable watch for backend changes
+    command: dotnet watch run
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - MongoDbSettings__ConnectionString=mongodb://admin:admin123@mongo:27017
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev
     ports:
-      - "5173:5173"  # Map the Vite dev server port to your local machine
+      - "5173:5173"
     volumes:
       - ./frontend:/app
-    command: npm run dev -- --host 0.0.0.0  # Allow external access to the dev server
+    command: npm run dev -- --host 0.0.0.0
     environment:
       - NODE_ENV=development
+
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin123
+
+volumes:
+  mongo-data:

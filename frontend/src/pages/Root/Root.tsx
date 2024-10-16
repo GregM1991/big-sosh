@@ -22,7 +22,7 @@ export function Root() {
                 isActive ? "underline" : "hover:underline"
               }
             >
-              About
+              Users
             </NavLink>
           </li>
         </ul>
