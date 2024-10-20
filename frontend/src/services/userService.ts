@@ -1,7 +1,10 @@
 import createServiceApiClient from "../api/apiClient";
 import { User } from "../domain/entities/User";
 
-const userApiClient = createServiceApiClient({ basePath: "/User" });
+const userApiClient = createServiceApiClient({
+  basePath: "/user",
+  baseHost: "5000"
+});
 
 export const getUsers = async () => {
   return userApiClient.get<User[]>("/getAll");
@@ -13,5 +16,5 @@ interface CreateUserRequest {
 }
 
 export const createUser = async (user: { name: string; email: string }) => {
-  return userApiClient.post<User, CreateUserRequest>("create", user);
+  return userApiClient.post<User, CreateUserRequest>("/create", user);
 };

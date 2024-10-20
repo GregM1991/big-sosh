@@ -1,0 +1,13 @@
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/bin/Debug/net8.0/CommonLibrary.deps.json
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/bin/Debug/net8.0/CommonLibrary.dll
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/bin/Debug/net8.0/CommonLibrary.pdb
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/CommonLibrary.csproj.AssemblyReference.cache
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/CommonLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/CommonLibrary.AssemblyInfoInputs.cache
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/CommonLibrary.AssemblyInfo.cs
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/CommonLibrary.csproj.CoreCompileInputs.cache
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/CommonLibrary.sourcelink.json
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/CommonLibrary.dll
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/refint/CommonLibrary.dll
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/CommonLibrary.pdb
+/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/Debug/net8.0/ref/CommonLibrary.dll

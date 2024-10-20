@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "85MTtfJiYco=",
+  "dgSpecHash": "g7rgNFjWQxQ=",
   "success": true,
   "projectFilePath": "/home/gregm/workspace/big-sosh/backend/UserService/UserService.csproj",
   "expectedPackageFiles": [
@@ -13,10 +13,11 @@
     "/home/gregm/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "/home/gregm/.nuget/packages/microsoft.openapi/1.6.14/microsoft.openapi.1.6.14.nupkg.sha512",
     "/home/gregm/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "/home/gregm/.nuget/packages/mongodb.bson/2.29.0/mongodb.bson.2.29.0.nupkg.sha512",
-    "/home/gregm/.nuget/packages/mongodb.driver/2.29.0/mongodb.driver.2.29.0.nupkg.sha512",
-    "/home/gregm/.nuget/packages/mongodb.driver.core/2.29.0/mongodb.driver.core.2.29.0.nupkg.sha512",
+    "/home/gregm/.nuget/packages/mongodb.bson/2.30.0/mongodb.bson.2.30.0.nupkg.sha512",
+    "/home/gregm/.nuget/packages/mongodb.driver/2.30.0/mongodb.driver.2.30.0.nupkg.sha512",
+    "/home/gregm/.nuget/packages/mongodb.driver.core/2.30.0/mongodb.driver.core.2.30.0.nupkg.sha512",
     "/home/gregm/.nuget/packages/mongodb.libmongocrypt/1.12.0/mongodb.libmongocrypt.1.12.0.nupkg.sha512",
+    "/home/gregm/.nuget/packages/nats.client/1.1.6/nats.client.1.1.6.nupkg.sha512",
     "/home/gregm/.nuget/packages/sharpcompress/0.30.1/sharpcompress.0.30.1.nupkg.sha512",
     "/home/gregm/.nuget/packages/snappier/1.0.0/snappier.1.0.0.nupkg.sha512",
     "/home/gregm/.nuget/packages/swashbuckle.aspnetcore/6.6.2/swashbuckle.aspnetcore.6.6.2.nupkg.sha512",

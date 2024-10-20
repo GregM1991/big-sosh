@@ -1,14 +1,33 @@
 services:
   user-service:
-    build: ./backend/UserService
+    build:
+      context: .
+      dockerfile: ./backend/UserService/Dockerfile
     ports:
       - "5000:8080"
     volumes:
       - ./backend/UserService:/src
+      - ./backend/CommonLibrary:/src/CommonLibrary
     command: dotnet watch run
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - MongoDbSettings__ConnectionString=mongodb://admin:admin123@mongo:27017
+      - MongoDbSettings__ConnectionString=mongodb://admin:admin123@mongo-user:27017
+      - NATS__Url=nats://nats:4222
+
+  post-service:
+    build:
+      context: .
+      dockerfile: ./backend/PostService/Dockerfile
+    ports:
+      - "5001:8080"
+    volumes:
+      - ./backend/PostService:/src
+      - ./backend/CommonLibrary:/src/CommonLibrary
+    command: dotnet watch run
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MongoDbSettings__ConnectionString=mongodb://admin:admin123@mongo-post:27017
+      - NATS__Url=nats://nats:4222
 
   frontend:
     build:
@@ -22,15 +41,34 @@ services:
     environment:
       - NODE_ENV=development
 
-  mongo:
+  mongo-user:
     image: mongo:6.0
     ports:
       - "27017:27017"
     volumes:
-      - mongo-data:/data/db
+      - mongo-user-data:/data/db
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=admin123
 
+  mongo-post:
+    image: mongo:6.0
+    ports:
+      - "27018:27017"  # Expose MongoDB for PostService on a different host port (27018)
+    volumes:
+      - mongo-post-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin123
+
+  nats:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    environment:
+      - NATS_SERVER_JS_ENABLE=true
+
 volumes:
-  mongo-data:
+  mongo-user-data:
+  mongo-post-data:

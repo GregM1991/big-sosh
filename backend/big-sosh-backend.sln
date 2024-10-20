@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "UserService\UserService.csproj", "{EE31DD89-EA97-426F-A88F-8CE41DA3B49D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostService", "PostService\PostService.csproj", "{CA5763BB-D5AE-4707-ABC3-FCAC32CB7AB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{14F36C0D-B25C-4AED-A3FC-5BAFDE3D38DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{EE31DD89-EA97-426F-A88F-8CE41DA3B49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE31DD89-EA97-426F-A88F-8CE41DA3B49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE31DD89-EA97-426F-A88F-8CE41DA3B49D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA5763BB-D5AE-4707-ABC3-FCAC32CB7AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5763BB-D5AE-4707-ABC3-FCAC32CB7AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA5763BB-D5AE-4707-ABC3-FCAC32CB7AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5763BB-D5AE-4707-ABC3-FCAC32CB7AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F36C0D-B25C-4AED-A3FC-5BAFDE3D38DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F36C0D-B25C-4AED-A3FC-5BAFDE3D38DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F36C0D-B25C-4AED-A3FC-5BAFDE3D38DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F36C0D-B25C-4AED-A3FC-5BAFDE3D38DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

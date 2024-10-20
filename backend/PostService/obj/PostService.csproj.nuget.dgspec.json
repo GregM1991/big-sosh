@@ -1,0 +1,163 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/gregm/workspace/big-sosh/backend/PostService/PostService.csproj": {}
+  },
+  "projects": {
+    "/home/gregm/workspace/big-sosh/backend/CommonLibrary/CommonLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gregm/workspace/big-sosh/backend/CommonLibrary/CommonLibrary.csproj",
+        "projectName": "CommonLibrary",
+        "projectPath": "/home/gregm/workspace/big-sosh/backend/CommonLibrary/CommonLibrary.csproj",
+        "packagesPath": "/home/gregm/.nuget/packages/",
+        "outputPath": "/home/gregm/workspace/big-sosh/backend/CommonLibrary/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gregm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.30.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gregm/workspace/big-sosh/backend/PostService/PostService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gregm/workspace/big-sosh/backend/PostService/PostService.csproj",
+        "projectName": "PostService",
+        "projectPath": "/home/gregm/workspace/big-sosh/backend/PostService/PostService.csproj",
+        "packagesPath": "/home/gregm/.nuget/packages/",
+        "outputPath": "/home/gregm/workspace/big-sosh/backend/PostService/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gregm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/gregm/workspace/big-sosh/backend/CommonLibrary/CommonLibrary.csproj": {
+                "projectPath": "/home/gregm/workspace/big-sosh/backend/CommonLibrary/CommonLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.30.0, )"
+            },
+            "NATS.Client": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

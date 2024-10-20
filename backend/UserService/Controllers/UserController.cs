@@ -6,16 +6,11 @@ namespace UserServiceNamespace.Controllers
 {
   [ApiController]
   [Route("api/[controller]/[action]")]
-  public class UserController : ControllerBase
+  public class UserController(UserService userService) : ControllerBase
   {
-    private readonly UserService _userService;
+    private readonly UserService _userService = userService;
 
-    public UserController(UserService userService)
-    {
-      _userService = userService;
-    }
-
-    [HttpGet]
+        [HttpGet]
     public async Task<IActionResult> GetAll()
     {
       var users = await _userService.GetAllUsersAsync();

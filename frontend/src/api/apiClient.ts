@@ -1,17 +1,19 @@
-const BASE_URL = "http://localhost:5000/api";
-
 interface FetchOptions extends RequestInit {
   headers?: Record<string, string>;
 }
 
 interface ServiceApiClientOptions {
   basePath: string;
+  baseHost: string;
 }
 
 type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 
-function createServiceApiClient({ basePath }: ServiceApiClientOptions) {
-  const fullBasePath = `${BASE_URL}${basePath}`;
+function createServiceApiClient({
+  basePath,
+  baseHost
+}: ServiceApiClientOptions) {
+  const fullBasePath = `http://localhost:${baseHost}/api${basePath}`;
 
   const serviceApiClient = async <TResponse, TBody = undefined>(
     path: string,
@@ -53,7 +55,27 @@ function createServiceApiClient({ basePath }: ServiceApiClientOptions) {
       path: string,
       body: TBody,
       options?: Omit<FetchOptions, "method" | "body">
-    ) => serviceApiClient<TResponse, TBody>(path, "POST", body, options)
+    ) => serviceApiClient<TResponse, TBody>(path, "POST", body, options),
+
+    put: <TResponse, TBody>(
+      path: string,
+      body: TBody,
+      options?: Omit<FetchOptions, "method" | "body">
+    ) => serviceApiClient<TResponse, TBody>(path, "PUT", body, options),
+
+    delete: <TResponse>(path: string, options?: Omit<FetchOptions, "method">) =>
+      serviceApiClient<TResponse, undefined>(
+        path,
+        "DELETE",
+        undefined,
+        options
+      ),
+
+    patch: <TResponse, TBody>(
+      path: string,
+      body: TBody,
+      options?: Omit<FetchOptions, "method" | "body">
+    ) => serviceApiClient<TResponse, TBody>(path, "PATCH", body, options)
   };
 }
 

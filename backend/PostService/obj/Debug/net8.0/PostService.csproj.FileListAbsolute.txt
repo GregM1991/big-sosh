@@ -1,0 +1,8 @@
+/home/gregm/workspace/big-sosh/backend/PostService/obj/Debug/net8.0/PostService.csproj.AssemblyReference.cache
+/home/gregm/workspace/big-sosh/backend/PostService/obj/Debug/net8.0/PostService.GeneratedMSBuildEditorConfig.editorconfig
+/home/gregm/workspace/big-sosh/backend/PostService/obj/Debug/net8.0/PostService.AssemblyInfoInputs.cache
+/home/gregm/workspace/big-sosh/backend/PostService/obj/Debug/net8.0/PostService.AssemblyInfo.cs
+/home/gregm/workspace/big-sosh/backend/PostService/obj/Debug/net8.0/PostService.csproj.CoreCompileInputs.cache
+/home/gregm/workspace/big-sosh/backend/PostService/obj/Debug/net8.0/PostService.MvcApplicationPartsAssemblyInfo.cs
+/home/gregm/workspace/big-sosh/backend/PostService/obj/Debug/net8.0/PostService.MvcApplicationPartsAssemblyInfo.cache
+/home/gregm/workspace/big-sosh/backend/PostService/obj/Debug/net8.0/PostService.sourcelink.json

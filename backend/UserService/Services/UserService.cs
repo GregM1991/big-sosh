@@ -1,6 +1,7 @@
 using MongoDB.Driver;
 using Microsoft.Extensions.Options;
 using UserServiceNamespace.Models;
+using CommonLibrary.Models;
 
 namespace UserServiceNamespace.Services
 {
@@ -12,7 +13,7 @@ namespace UserServiceNamespace.Services
     {
         var client = new MongoClient(mongoDbSettings.Value.ConnectionString);
         var database = client.GetDatabase(mongoDbSettings.Value.DatabaseName);
-        _users = database.GetCollection<User>(mongoDbSettings.Value.UserCollectionName);
+        _users = database.GetCollection<User>(mongoDbSettings.Value.CollectionName);
     }
 
     public async Task<List<User>> GetAllUsersAsync() =>
